@@ -19,7 +19,7 @@ body {
   background-color: rgb(59, 59, 59);
 }
 
-.main p {
+.main div {
   color: white;
   font-size: 20px;
 }
@@ -31,7 +31,7 @@ body {
 }
 
 .correct {
-  color: green;
+  color: rgb(0, 120, 88);
 }
 
 .incorrect {
