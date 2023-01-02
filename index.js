@@ -54,7 +54,6 @@ function checking() {
 
 function timing() {
   let timer = new Date();
-  min.innerText = 0;
   sec.innerText = 0;
   setInterval(() => {
     sec.innerText = Math.floor((new Date() - timer) / 1000);
