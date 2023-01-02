@@ -1,4 +1,6 @@
 const inp = document.getElementById("typing");
+const min = document.getElementById("min");
+const sec = document.getElementById("sec");
 const quotDisplay = document.getElementById("texts");
 
 const RANDOM_QUOTE_API_URL = "http://api.quotable.io/random";
@@ -7,7 +9,7 @@ async function gettingText() {
   const fetched = await fetch(RANDOM_QUOTE_API_URL);
   const response = await fetched.json();
   const text = response.content;
-  console.log(text);
+
   let splitText = text.split("");
   splitText.forEach((char) => {
     const spanEl = document.createElement("span");
@@ -15,12 +17,13 @@ async function gettingText() {
     quotDisplay.appendChild(spanEl);
   });
 
-  cheching();
+  timing();
+  checking();
 }
 
 gettingText();
 
-function cheching() {
+function checking() {
   inp.addEventListener("input", () => {
     const quotArray = quotDisplay.querySelectorAll("span");
     const inpArray = inp.value.split("");
@@ -47,4 +50,13 @@ function cheching() {
       gettingText();
     }
   });
+}
+
+function timing() {
+  let timer = new Date();
+  min.innerText = 0;
+  sec.innerText = 0;
+  setInterval(() => {
+    sec.innerText = Math.floor((new Date() - timer) / 1000);
+  }, 1000);
 }

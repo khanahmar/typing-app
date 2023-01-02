@@ -49,3 +49,12 @@ textarea:focus {
 .incorrect {
   color: rgb(255, 33, 33);
 }
+
+.timer {
+  display: flex;
+  justify-content: center;
+}
+
+#min {
+  margin: 0 10px;
+}
